@@ -1,6 +1,7 @@
 package wr;
 //File Name EmployeeManager.java
-// EmployeeManager - Task1 (Formatting & style cleaned)
+
+// EmployeeManager - Task2 (Argument count validation added)
 import java.io.*;
 import java.util.*;
 
@@ -8,7 +9,13 @@ public class EmployeeManager {
 
     public static void main(String[] args) {
 
-        // Check arguments
+        // TASK 2: Validate number of arguments
+        if (args.length != 1) {
+            System.out.println("Error: Exactly one argument is required.");
+            return;
+        }
+
+        // existing code below (same as Task1)
         if (args[0].equals("l")) {
             System.out.println("Loading data ...");
             try {
