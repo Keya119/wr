@@ -131,4 +131,18 @@ public class EmployeeManager {
             System.out.println("Data Deleted.");
         }
     }
+    // TASK 4: Read employees into string array
+    public static String[] readEmployees() throws Exception {
+        BufferedReader reader = new BufferedReader(new FileReader("employees.txt"));
+        String line = reader.readLine();
+        reader.close();
+        return line.split(",");
+    }
+
+    // TASK 4: Write employees array back to file
+    public static void writeEmployees(String[] employees) throws Exception {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("employees.txt"));
+        writer.write(String.join(",", employees));
+        writer.close();
+    }
 }
